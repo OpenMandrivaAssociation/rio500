@@ -3,7 +3,7 @@
 Summary:	Rio 500 Support
 Name:		rio500
 Version:	0.8.1
-Release:	8mdk
+Release:	%mkrel 8
 License:	GPL
 Group:		Sound
 Source0:	%{name}-%{version}.tar.bz2
