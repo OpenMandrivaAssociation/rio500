@@ -8,6 +8,7 @@ License:	GPL
 Group:		Sound
 Source0:	%{name}-%{version}.tar.bz2
 Patch0:		rio500-gcc3.4-fix.patch.bz2
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:		http://rio500.sourceforge.net/
 BuildRequires:	libglib2.0-devel
 %if %{enable_usbdevfs}
