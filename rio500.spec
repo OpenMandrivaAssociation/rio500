@@ -4,24 +4,11 @@
 
 Summary:	Utilities for accessing a Rio 500 player
 Name:		rio500
-Version:	0.9.0
+Version:	0.9.1
 Release:	%mkrel 1
 License:	GPLv2+
 Group:		Sound
-# Modified from original upstream tarball: non-free fonts replaced:
-# tar xvjf rio500-version.tar.bz2
-# cd rio500/fonts
-# rm -f *.fon *.psf *.nfo Readme.txt
-# cp /usr/share/wine/fonts/*.fon .
-# cp /usr/lib/kbd/consolefonts/lat1-12.psfu.gz .
-# gunzip lat1-12.psfu.gz
-# mv lat1-12.psfu lat1-12.psf
-# (adjust Makefile.am and Makefile.in)
-# (create README)
-# cd ../..
-# tar cvjf rio500-version-mdv.tar.bz2 rio500/
-Source0:	http://downloads.sourceforge.net/rio500/%{name}-%{version}-mdv.tar.bz2
-Patch0:		rio500-0.9.0-link.patch
+Source0:	http://downloads.sourceforge.net/rio500/%{name}-%{version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:		http://rio500.sourceforge.net/
 BuildRequires:	libglib2.0-devel
@@ -56,12 +43,10 @@ developing programs accessing a Rio 500.
 
 %prep
 %setup -q
-%patch0 -p1 -b .link
 
 %build
-autoconf
 export CFLAGS="%{optflags} -fPIC -DPIC"
-%configure2_5x --with-id3support --with-fontfile=%{_datadir}/rio500/fonts/sserifee.fon --with-psffont=%{_datadir}/rio500/fonts/lat1-12.psf
+%configure2_5x --with-id3support
 
 %make
 
