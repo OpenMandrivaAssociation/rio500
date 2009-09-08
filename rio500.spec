@@ -5,7 +5,7 @@
 Summary:	Utilities for accessing a Rio 500 player
 Name:		rio500
 Version:	0.9.1
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	GPLv2+
 Group:		Sound
 Source0:	http://downloads.sourceforge.net/rio500/%{name}-%{version}.tar.bz2
