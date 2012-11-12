@@ -1,0 +1,26 @@
+diff -p -up rio500-0.9.1/librio500/librio500-usbdevfs.c~ rio500-0.9.1/librio500/librio500-usbdevfs.c
+--- rio500-0.9.1/librio500/librio500-usbdevfs.c~	2008-06-16 01:39:03.000000000 +0200
++++ rio500-0.9.1/librio500/librio500-usbdevfs.c	2009-09-14 12:39:13.000000000 +0200
+@@ -560,8 +560,8 @@ folder_entry_new (char *name, char *font
+       free (bits);
+     }
+ 
+-    sprintf (fe->name1, name);
+-    sprintf (fe->name2, name);
++    sprintf (fe->name1, "%s", name);
++    sprintf (fe->name2, "%s", name);
+   }
+ 
+ /* data on ppc stored in big_endian, switch to little endian in preparation to send to rio */
+diff -p -up rio500-0.9.1/src/rio_swap_songs_simple.c~ rio500-0.9.1/src/rio_swap_songs_simple.c
+--- rio500-0.9.1/src/rio_swap_songs_simple.c~	2008-06-16 01:19:00.000000000 +0200
++++ rio500-0.9.1/src/rio_swap_songs_simple.c	2009-09-14 12:40:16.000000000 +0200
+@@ -81,7 +81,7 @@ main(int argc, char *argv[])
+   /* Make sure folder_num isn't set to something stupid with -F */
+   if (folder_num < 0 || folder_num>256) /* new limit is 256 folders */
+   {
+-    printf (rio_result_to_string(RIO_NODIR));
++    printf ("%s", rio_result_to_string(RIO_NODIR));
+     usage (argv[0]);
+     exit (-1);
+   }
