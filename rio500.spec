@@ -5,12 +5,11 @@
 Summary:	Utilities for accessing a Rio 500 player
 Name:		rio500
 Version:	0.9.1
-Release:	%mkrel 5
+Release:	6
 License:	GPLv2+
 Group:		Sound
 Source0:	http://downloads.sourceforge.net/rio500/%{name}-%{version}.tar.bz2
 Patch:		rio500-0.9.1-format-strings.patch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:		http://rio500.sourceforge.net/
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(libusb)
