@@ -12,8 +12,8 @@ Source0:	http://downloads.sourceforge.net/rio500/%{name}-%{version}.tar.bz2
 Patch:		rio500-0.9.1-format-strings.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:		http://rio500.sourceforge.net/
-BuildRequires:	libglib2.0-devel
-BuildRequires:	libusb-devel
+BuildRequires:	pkgconfig(glib-2.0)
+BuildRequires:	pkgconfig(libusb)
 Obsoletes:	rio500-utils < %{version}-%{release}
 Obsoletes:	rio500-share < %{version}-%{release}
 Conflicts:	rio500-share < %{version}-%{release}
